@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+/* --- Custom color variables --- */
+:root {
+  --background: #b6d5f1; /* light gray */
+  --foreground: #171717;
+  --accent: #1a73e8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-geist-sans);
+}
+
+/* --- Base styling --- */
+html, body {
+  height: 100%;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- Link styling --- */
+a {
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+/* Accent links (like footer or inline links) */
+p a,
+footer a {
+  color: var(--accent);
+}
+
+p a:hover,
+footer a:hover {
+  color: color-mix(in srgb, var(--accent) 80%, white);
+}
+
+/* Buttons and nav links will rely on Tailwind text colors */
+a.btn {
+  color: inherit;
+}
